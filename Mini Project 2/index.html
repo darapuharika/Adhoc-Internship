@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Digital Diary</title>
+    <link rel="stylesheet" href="src/css/style.css">
+</head>
+<body>
+    <div id="pin-screen" class="card">
+        <h2>🔒 Enter Security PIN</h2>
+        <p style="color: #1c407d; margin-bottom: 15px; font-size: 14px;">Default PIN is: 1234</p>
+        <div class="input-group">
+            <input type="password" id="pin-input" maxlength="4" placeholder="••••" autocomplete="off">
+        </div>
+        <button class="btn" onclick="verifyPin()">Unlock Diary</button>
+        <p id="pin-error" class="error-msg"></p>
+    </div>
+
+    <div id="diary-screen" class="card main-diary" style="display: none;">
+        <div class="diary-header">
+            <h2>📝 My Secret Diary</h2>
+            <button class="btn-lock" onclick="lockDiary()">Lock 🔒</button>
+        </div>
+        <div class="diary-workspace">
+            <div class="entries-sidebar">
+                <h3>Past Logs</h3>
+                <div id="entries-list"></div>
+            </div>
+            <div class="entry-form">
+                <div class="input-group">
+                    <label>Title</label>
+                    <input type="text" id="note-title" placeholder="Today's highlight...">
+                </div>
+                <div class="input-group">
+                    <label>Secret Thought</label>
+                    <textarea id="note-content" rows="8" placeholder="Write your heart out..."></textarea>
+                </div>
+                <button class="btn" onclick="saveEntry()">Save Entry Securely</button>
+            </div>
+        </div>
+    </div>
+    <script src="src/js/app.js"></script>
+</body>
+</html>
